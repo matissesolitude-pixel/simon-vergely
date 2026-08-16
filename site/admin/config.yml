@@ -10,16 +10,15 @@
 # Ce n'est pas de la méfiance, c'est du service : un site qu'on peut
 # dérégler d'un clic n'est plus livrable.
 #
-# AVANT DE POUVOIR S'EN SERVIR — remplacer __SITE_DECAPBRIDGE__ ci-dessous
-# par l'identifiant donné par DecapBridge à la création du site, et
-# remplacer __DEPOT__ par matissesolitude-pixel/simon-vergely.
-# Tant que ces deux valeurs sont là, la page d'administration refuse de
-# se lancer et affiche la marche à suivre : elle ne casse pas en silence.
+# IL MANQUE UNE SEULE VALEUR — remplacer __SITE_DECAPBRIDGE__ ci-dessous par
+# l'identifiant donné par DecapBridge à la création du site. Tant qu'il est
+# là, la page d'administration refuse de se lancer et affiche la marche à
+# suivre : elle ne casse pas en silence.
 # =====================================================================
 
 backend:
   name: git-gateway
-  repo: __DEPOT__
+  repo: matissesolitude-pixel/simon-vergely
   branch: main
   identity_url: https://auth.decapbridge.com/sites/__SITE_DECAPBRIDGE__
   gateway_url: https://gateway.decapbridge.com
