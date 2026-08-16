@@ -81,6 +81,12 @@ RACINE = ""
 
 
 def img(nom, ap):
+    """PIÈGE ÉVITÉ : les données historiques ne portent que le nom du fichier
+    (« film-ponton.jpg »), mais l'interface d'édition enregistre un chemin
+    complet (« /assets/img/film-ponton.jpg »). Sans ce nettoyage, la première
+    image envoyée par Simon donnerait « assets/img//assets/img/... » et ne
+    s'afficherait pas. On ne garde que le nom de fichier, d'où qu'il vienne."""
+    nom = nom.rsplit("/", 1)[-1]
     if not ap:
         return f"{RACINE}assets/img/{nom}"
     return b64(f"assets/img/{nom}", "image/png" if nom.endswith(".png") else "image/jpeg")
@@ -653,10 +659,23 @@ def autoporte(lg, nom):
     print(f"  {lg}  {nom:16} {(OUT / nom).stat().st_size // 1024:4} Ko  (autoporté)")
 
 
+def feuille_apercu():
+    """LA FEUILLE DE STYLE DU SITE, EN FICHIER SÉPARÉ.
+    Elle ne sert qu'à l'interface d'édition : le volet d'aperçu la charge pour
+    que ce que Simon voit en tapant ait EXACTEMENT l'allure du site. Sans elle,
+    l'aperçu serait du texte brut — c'est-à-dire aucune aide.
+    Les pages du site, elles, gardent leur style incrusté : zéro requête."""
+    (OUT / "assets").mkdir(parents=True, exist_ok=True)
+    (OUT / "assets" / "apercu.css").write_text(feuille() + EN_PLUS, encoding="utf-8")
+    print(f"  --  apercu.css     {(OUT / 'assets' / 'apercu.css').stat().st_size // 1024:4} Ko"
+          f"  (volet d'aperçu de l'interface)")
+
+
 if __name__ == "__main__":
     construire("fr", OUT)
     construire("en", OUT / "en")
     RACINE = ""
+    feuille_apercu()
     # Les versions autoportées pèsent 4,6 Mo chacune et ne servent qu'à la
     # relecture depuis un téléphone. Inutile de les embarquer dans la mise en
     # ligne : Netlify pose CI=true, on les saute là-bas.

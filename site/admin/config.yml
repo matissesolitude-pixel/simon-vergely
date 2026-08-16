@@ -59,14 +59,15 @@ logo_url: https://decapbridge.com/decapcms-with-bridge.svg
 collections:
   # -------------------------------------------------------------------
   - name: coordonnees
-    label: Mes coordonnées
+    label: 📇  Mail et téléphone  ·  bas de page
     files:
       - name: contact
         label: Mail, téléphone, Instagram
         file: donnees/contact.json
         description: >
-          Ce que les clients utilisent pour vous joindre. Le mail et le
-          téléphone apparaissent en bas de chaque page et sur les boutons.
+          OÙ ÇA SORT : en bas de chacune des six pages, et derrière les
+          boutons « Écrire un mail », « Envoyer un SMS » et « Appeler ».
+          Le volet de droite vous montre le pied de page tel qu'il sera.
         fields:
           - { name: mail, label: Adresse mail, widget: string,
               hint: "Celle qui reçoit les demandes de projet." }
@@ -81,15 +82,17 @@ collections:
 
   # -------------------------------------------------------------------
   - name: travaux
-    label: Mes travaux
+    label: 🖼  Films et mondes  ·  accueil + page Travail
     files:
       - name: travaux
         label: Les films et les mondes déformés
         file: donnees/travaux.json
         description: >
-          Deux registres. Les films occupent la page « Le travail », les
-          mondes déformés la page d'accueil. Une image n'est jamais montrée
-          à deux endroits.
+          DEUX ENDROITS DIFFÉRENTS, ne les mélangez pas.
+          Les FILMS vont sur la page « Le travail », en paysage.
+          Les MONDES DÉFORMÉS vont sur la page d'accueil, en portrait, sous
+          les vidéos. Le volet de droite montre les deux, dans l'ordre du
+          site. Une image n'apparaît jamais à deux endroits.
         fields:
           - name: films
             label: Les films
@@ -106,7 +109,7 @@ collections:
                 summary: "{{fields.vu}}"
                 fields:
                   - { name: f, label: Image, widget: image,
-                      hint: "Format paysage. Elle sera recadrée en 16/9." }
+                      hint: "PAGE TRAVAIL, en paysage. Recadrée en 16/9 — ce qui dépasse en haut et en bas est coupé." }
                   - { name: vu, label: Ce qu'on voit, widget: string,
                       hint: "Décrivez l'image en quelques mots. C'est la légende." }
                   - { name: vu_en, label: Ce qu'on voit, en anglais, widget: string }
@@ -125,21 +128,23 @@ collections:
                 summary: "{{fields.vu}}"
                 fields:
                   - { name: f, label: Image, widget: image,
-                      hint: "Format portrait. Si ce visuel a un reel, il s'affichera en vidéo à la place." }
+                      hint: "PAGE D'ACCUEIL, en portrait, recadrée en 3/4. Si ce visuel a un reel, il passe en vidéo plus haut et sort de cette grille." }
                   - { name: vu, label: Ce qu'on voit, widget: string }
                   - { name: vu_en, label: Ce qu'on voit, en anglais, widget: string }
 
   # -------------------------------------------------------------------
   - name: publications
-    label: Mes reels
+    label: ▶️  Les vidéos  ·  haut de l'accueil
     files:
       - name: reels
         label: Les vidéos qui jouent sur l'accueil
         file: donnees/publications.json
         description: >
-          Les reels se jouent directement sur le site. Pour en ajouter un,
-          ouvrez la publication sur Instagram et copiez le code qui suit
-          /reel/ dans l'adresse.
+          OÙ ÇA SORT : en haut de la page d'accueil, dans la rangée qui
+          défile de gauche à droite. Les vidéos jouent SUR le site, le
+          visiteur ne part pas sur Instagram.
+          Pour en ajouter un : ouvrez la publication sur Instagram, copiez
+          le lien, et gardez le code qui suit /reel/.
         fields:
           - name: reels
             label: Les reels
@@ -154,18 +159,20 @@ collections:
               - { name: vu, label: Ce qu'on voit, widget: string }
               - { name: vu_en, label: Ce qu'on voit, en anglais, widget: string }
               - { name: apercu, label: Image de secours, widget: image,
-                  hint: "S'affiche le temps que la vidéo charge." }
+                  hint: "S'affiche une seconde, le temps que la vidéo charge. Prenez la première image du reel." }
 
   # -------------------------------------------------------------------
   - name: clients
-    label: Mes clients
+    label: 🏷  Logos clients  ·  bandeau noir, partout
     files:
       - name: clients
         label: Les logos qui défilent
         file: donnees/clients.json
         description: >
-          Ils défilent en bandeau sur toutes les pages. C'est la preuve la
-          plus regardée du site : mettez les plus connus en premier.
+          OÙ ÇA SORT : dans le bandeau noir qui défile, présent sur les
+          trois pages. C'est la preuve la plus regardée du site — mettez les
+          plus connus en premier, ce sont eux qu'on voit en premier.
+          Les logos sont affichés en blanc : un logo sombre sera invisible.
         fields:
           - name: logos
             label: Les logos
@@ -174,19 +181,21 @@ collections:
             summary: "{{fields.nom}}"
             fields:
               - { name: f, label: Logo, widget: image,
-                  hint: "Fond transparent de préférence. Il sera affiché en blanc sur noir." }
+                  hint: "BANDEAU NOIR. Affiché en blanc : prenez une version claire sur fond transparent, sinon il sera invisible." }
               - { name: nom, label: Nom du client, widget: string }
 
   # -------------------------------------------------------------------
   - name: histoire
-    label: Mon histoire
+    label: ✍️  Mon histoire  ·  page Travailler ensemble
     files:
       - name: histoire
         label: Ce que je raconte de moi
         file: donnees/histoire.json
         description: >
-          La page « Travailler ensemble ». Écrivez comme vous parlez : les
-          phrases entre guillemets sont les vôtres, elles portent la page.
+          OÙ ÇA SORT : toute la page « Travailler ensemble », de haut en bas,
+          dans l'ordre où les blocs apparaissent ci-dessous.
+          Écrivez comme vous parlez : les phrases entre guillemets sont les
+          vôtres, ce sont elles qui portent la page.
         fields:
           - { name: promesse, label: La promesse, widget: text }
           - { name: promesse_en, label: La promesse, en anglais, widget: text }
@@ -232,15 +241,16 @@ collections:
 
   # -------------------------------------------------------------------
   - name: instagram
-    label: Nombre d'abonnés
+    label: 📈  Nombre d'abonnés  ·  badge en haut
     files:
       - name: instagram
         label: Le compteur
         file: donnees/instagram.json
         description: >
-          Une fois le compte relié, ce chiffre se met à jour tout seul
-          quatre fois par jour et vous n'avez plus rien à faire ici.
-          En attendant, vous pouvez le corriger à la main.
+          OÙ ÇA SORT : dans le badge Instagram en haut à droite de chaque
+          page, et dans le premier des trois chiffres de l'accueil.
+          Une fois le compte relié, il se met à jour tout seul quatre fois
+          par jour et cette rubrique devient inutile.
         fields:
           - { name: compte, label: Compte Instagram, widget: string }
           - { name: abonnes, label: Nombre d'abonnés, widget: number,
