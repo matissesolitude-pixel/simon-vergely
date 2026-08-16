@@ -51,12 +51,12 @@
     fetch('config.yml')
       .then(function (r) { return r.ok ? r.text() : ''; })
       .then(function (y) {
-        if (y.indexOf('__SITE_DECAPBRIDGE__') !== -1 || y.indexOf('__DEPOT__') !== -1) {
+        if (y.indexOf('__SITE_DECAPBRIDGE__') !== -1) {
           document.getElementById('attente').hidden = false;
           return;
         }
         var s = document.createElement('script');
-        s.src = 'https://unpkg.com/decap-cms@^3.8.0/dist/decap-cms.js';
+        s.src = 'https://unpkg.com/decap-cms@^3.8.3/dist/decap-cms.js';
         document.body.appendChild(s);
       });
   </script>
