@@ -23,6 +23,36 @@
 (function () {
   if (location.search.indexOf('editer') === -1) return;
 
+  /* LES RECTANGLES NE S'AFFICHENT QUE POUR QUELQU'UN DE CONNECTÉ.
+     Un visiteur qui tomberait sur ?editer ne pourrait de toute façon rien
+     enregistrer — il faut une session DecapBridge, et seules les personnes
+     invitées en ont une. Mais lui montrer une interface d'édition qu'il ne
+     peut pas utiliser n'a aucun intérêt : on la lui cache, et on se contente
+     de dire où se connecter. La sécurité, elle, est côté serveur ; ceci
+     n'est que de la clarté. */
+  function session() {
+    try {
+      return ['decap-cms-user', 'netlify-cms-user'].some(function (k) {
+        var v = localStorage.getItem(k);
+        return v && v.length > 2;
+      });
+    } catch (e) { return false; }
+  }
+
+  if (!session()) {
+    var b = document.createElement('div');
+    b.setAttribute('style',
+      'position:fixed;left:0;right:0;bottom:0;z-index:10000;background:#141310;' +
+      'color:#F2F0EB;padding:.8rem 1.1rem;display:flex;gap:1rem;align-items:center;' +
+      'flex-wrap:wrap;font:400 13px/1.4 -apple-system,Helvetica,sans-serif');
+    b.innerHTML = '<b style="font-weight:700">Mode modification</b>' +
+      '<span>Connectez-vous pour voir et changer le contenu de cette page.</span>' +
+      '<a href="/admin/" style="color:#141310;background:#F2F0EB;text-decoration:none;' +
+      'font:700 12px/1 -apple-system,sans-serif;padding:.55rem .8rem">Se connecter</a>';
+    document.body.appendChild(b);
+    return;
+  }
+
   var ADMIN = '/admin/#/collections/';
   var FICHIER = {                 /* rubrique -> fichier, pour le lien direct */
     travaux: 'travaux', publications: 'reels', clients: 'clients',
