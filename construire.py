@@ -275,7 +275,7 @@ def tete(courante, lg, ap):
   <nav class="nav">{nav}</nav>
   <div class="tete__act">
     {bascule}
-    <a class="badge" href="https://www.instagram.com/{CO['instagram']}/" target="_blank"
+    <a class="badge" data-zone="instagram" data-zone-nom="Le nombre d'abonnes" data-zone-quoi="badge en haut a droite" href="https://www.instagram.com/{CO['instagram']}/" target="_blank"
        rel="noopener" title="{E(t('badge_titre', lg))}">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9"
            stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -304,10 +304,14 @@ def bandeau(ap, lg):
     une = "".join(f'<img src="{img(l["f"], ap)}" alt="{E(l["nom"])}" '
                   f'title="{E(l["nom"])}" loading="lazy">' for l in CL["logos"])
     return f"""
-<div class="bandeau">
+<div class="bandeau" data-zone="clients" data-zone-nom="Les logos clients" data-zone-quoi="bandeau qui defile, present sur les trois pages">
   <p class="bandeau__t">{E(t('bandeau_titre', lg))}</p>
   <div class="piste">{une}{une}</div>
 </div>"""
+
+
+ZONE_REELS = 'data-zone="publications" data-zone-nom="Les videos" '\
+             'data-zone-quoi="rangee qui defile, haut de l\'accueil"'
 
 
 def reels(ap, lg):
@@ -329,7 +333,7 @@ def reels(ap, lg):
                 f'<figure class="reel"><iframe src="https://www.instagram.com/reel/'
                 f'{E(r["code"])}/embed" loading="lazy" title="{E(vu)}" '
                 f'scrolling="no" allowtransparency="true"></iframe></figure>')
-    return f'<div class="reels">{"".join(out)}</div>'
+    return (f'<div class="reels" ' + ZONE_REELS + f'>{"".join(out)}</div>')
 
 
 def galerie(bloc, ap, lg, format_="16/9", liste=None):
@@ -341,12 +345,12 @@ def galerie(bloc, ap, lg, format_="16/9", liste=None):
     return f"""
 <span class="eti">{E(d(bloc, 'titre', lg))}</span>
 <p class="chapeau" style="margin-top:0">{E(d(bloc, 'chapeau', lg))}</p>
-<div class="grille" style="margin-top:2rem">{o}</div>"""
+<div class="grille" style="margin-top:2rem" data-zone="travaux" data-zone-nom="Les films" data-zone-quoi="page Travail, en paysage">{o}</div>"""
 
 
 def pied(lg):
     return f"""
-<footer class="pied"><div class="pied__in">
+<footer class="pied" data-zone="coordonnees" data-zone-nom="Mail, telephone, Instagram" data-zone-quoi="bas de chaque page"><div class="pied__in">
   <div><h4>{E(t('pied_1_h', lg))}</h4><p>{E(t('pied_1_p_1', lg))}<br>
     {E(t('pied_1_p_2', lg))}</p></div>
   <div><h4>{E(t('pied_2_h', lg))}</h4>
@@ -448,7 +452,7 @@ def page_accueil(ap, lg):
   <h2>{E(t('acc_reels_h2_1', lg))}<br>{E(t('acc_reels_h2_2', lg))}</h2>
   <p class="chapeau">{E(d(TR['mondes'], 'chapeau', lg))}</p>
   {reels(ap, lg)}
-  <div class="grille grille--haute" style="margin-top:1.4rem">{fixes}</div>
+  <div class="grille grille--haute" style="margin-top:1.4rem" data-zone="travaux" data-zone-nom="Les mondes deformes" data-zone-quoi="sous les videos, en portrait">{fixes}</div>
 </section>
 
 <section class="fond-2"><div class="sec">
@@ -516,20 +520,20 @@ def page_ensemble(ap, lg):
 </section>
 
 <section class="sec" style="padding-top:0">
-  <div class="formats">{fo}</div>
+  <div class="formats" data-zone="histoire" data-zone-nom="Ce que je propose" data-zone-quoi="page Travailler ensemble">{fo}</div>
 </section>
 
 <section class="fond-2"><div class="sec">
   <span class="eti">{E(t('ens_comment_eti', lg))}</span>
   <h2>{E(d(HI, 'comment_titre', lg))}</h2>
   <p class="chapeau">{E(d(HI, 'comment_chapeau', lg))}</p>
-  <ol class="etapes">{co}</ol>
+  <ol class="etapes" data-zone="histoire" data-zone-nom="Comment ca se passe" data-zone-quoi="page Travailler ensemble">{co}</ol>
 </div></section>
 
 <section class="sec">
   <span class="eti">{E(t('ens_qui_eti', lg))}</span>
   <h2>{E(t('ens_qui_h2_1', lg))}<br><em>{E(t('ens_qui_h2_2', lg))}</em></h2>
-  <div class="chapitres">{ch}</div>
+  <div class="chapitres" data-zone="histoire" data-zone-nom="Qui je suis" data-zone-quoi="page Travailler ensemble">{ch}</div>
 </section>
 
 {bandeau(ap, lg)}
@@ -626,7 +630,11 @@ def page(fichier, titre, desc, corps, ap, lg):
             f'<title>{E(titre)}</title><meta name="description" content="{E(desc)}">'
             f'<meta name="theme-color" content="#F2F0EB">{alt}'
             f'<style>{css}</style></head><body>{corps}'
-            f'<script>{JS}</script></body></html>')
+            f'<script>{JS}</script>'
+            f'<script>if(location.search.indexOf("editer")>-1){{'
+            f'var e=document.createElement("script");'
+            f'e.src="{RACINE}assets/editer.js";document.body.appendChild(e);}}</script>'
+            f'</body></html>')
 
 
 def construire(lg, dossier):
