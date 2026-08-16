@@ -50,37 +50,41 @@ Matisse.
 Rien de ce qui suit ne demande d'écrire du code. Tout se fait dans un
 navigateur, et l'ordre compte.
 
-## 1. Le dépôt
+## 1. Le dépôt — FAIT
 
-Le projet est un dépôt Git. Il faut le pousser sur GitHub, en **privé** :
-les visuels de Simon y sont, et le site n'est pas encore public.
+`github.com/matissesolitude-pixel/simon-vergely`, **en public**.
 
-## 2. Netlify construit le site
+> **Pourquoi public.** Sur un dépôt privé, l'offre gratuite de Netlify
+> n'autorise **qu'un seul contributeur** : tout commit venant d'ailleurs est
+> refusé avec « Unrecognized Git contributor ». Ça aurait bloqué les
+> publications de Simon, qui arrivent signées de son nom.
+> Le dépôt ne contient aucun secret : le jeton Instagram vit dans les
+> secrets GitHub, celui de DecapBridge chez DecapBridge. Les visuels étaient
+> déjà publics sur le site.
+> L'alternative payante était Netlify Pro, ~19 $/mois.
 
-Dans Netlify : **Add new site → Import an existing project**, choisir le
-dépôt. `netlify.toml` donne déjà la commande (`python3 construire.py`) et le
-dossier (`site`) — il n'y a rien à saisir.
+## 2. Netlify construit le site — FAIT
 
-> **Le site actuellement en ligne a été déposé à la main.** Tant qu'il l'est,
-> les publications de Simon n'apparaîtront nulle part. C'est cette étape qui
-> relie l'interface au site réel, et elle n'est pas optionnelle.
+`resilient-cuchufli-a778a1.netlify.app`, relié au dépôt, construit par
+`python3 construire.py` à chaque poussée.
 
-## 3. DecapBridge ouvre la porte
+## 3. DecapBridge ouvre la porte — FAIT
 
 Netlify Identity a été déprécié en février 2025 et Git Gateway l'est aussi :
 sans remplaçant, Decap obligerait Simon à créer un compte GitHub.
 
-Sur [decapbridge.com](https://decapbridge.com) : créer un site, récupérer son
-identifiant, puis dans `site/admin/config.yml` remplacer
+Site DecapBridge `48464eb0-e724-4d4a-a775-255871bde32e`, jeton GitHub
+« DecapBridge - site Simon Vergely » (portée : ce seul dépôt, Contents et
+Pull requests en écriture, sans expiration).
 
-- `__DEPOT__` par `<compte>/<dépôt>`
-- `__SITE_DECAPBRIDGE__` par l'identifiant
+> **Le bloc `backend` de `site/admin/config.yml` est celui que DecapBridge
+> fournit, mot pour mot.** L'authentification est en **PKCE** :
+> `auth_type`, `base_url`, `auth_endpoint`, `auth_token_endpoint`. Ce ne sont
+> pas les clés d'un git-gateway classique, et Decap doit être en 3.8.3
+> minimum. Ne pas réécrire ce bloc de mémoire.
 
-Enfin, inviter Simon par mail depuis DecapBridge.
-
-**Tant que ces deux valeurs sont en gabarit, `/admin` refuse de démarrer et
-affiche la marche à suivre.** Elle ne montre pas un écran de connexion qui
-échouerait sans rien expliquer.
+**RESTE À FAIRE : inviter Simon par mail** depuis DecapBridge, onglet
+« Manage collaborators ».
 
 Gratuit jusqu'à 3 sites et 10 collaborateurs. Au-delà : 9 $/mois, ou 199 $
 une fois avec le droit de l'héberger soi-même — c'est la brique de connexion
