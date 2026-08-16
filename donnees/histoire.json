@@ -1,0 +1,127 @@
+{
+  "_lisez_moi": [
+    "SON HISTOIRE, ÉCRITE À PARTIR DE SES MOTS.",
+    "",
+    "Tout ce qui est entre guillemets vient de la page « À propos » de son",
+    "portfolio, mot pour mot. Le reste articule ses phrases sans rien ajouter",
+    "qu'il n'ait dit — ni client, ni chiffre, ni promesse.",
+    "",
+    "L'accroche « Trop propre, c'est suspect » est la traduction de sa propre",
+    "carte de présentation Instagram : « Meet Simon Vergély, the animator who",
+    "distrusts anything too polished »."
+  ],
+  "accroche": "Trop propre, c'est suspect.",
+  "promesse": "J'anime des mondes déformés — des visages qui débordent, des couleurs qui crient, des objets qui prennent la parole. Pour des marques, des festivals et des institutions qui préfèrent qu'on les remarque.",
+  "chapitres": [
+    {
+      "titre": "J'ai appris seul, avec des outils imparfaits",
+      "texte": [
+        "Arts appliqués, puis design produit. L'animation, je l'ai apprise en la faisant — « à apprivoiser mes outils imparfaits, à tracer mon propre chemin entre erreurs et intuitions ».",
+        "C'est de là que vient ce que vous voyez. Pas d'une école d'animation, pas d'un studio. Des erreurs qu'on garde parce qu'elles disent quelque chose."
+      ],
+      "citation": "C'est cette singularité qui donne à mon travail une identité brute, authentique.",
+      "titre_en": "I taught myself, with imperfect tools",
+      "texte_en": [
+        "Applied arts, then product design. Animation I learned by doing it — « to tame my imperfect tools, to trace my own path between mistakes and instinct ».",
+        "That is where what you are looking at comes from. Not an animation school, not a studio. Mistakes you keep because they say something."
+      ],
+      "citation_en": "That singularity is what gives my work a raw, honest identity."
+    },
+    {
+      "titre": "Le hip hop des années 90 et le cinéma d'auteur",
+      "texte": [
+        "Deux choses m'ont formé plus que le reste : le hip hop jazz new-yorkais des années 90, et le cinéma d'auteur.",
+        "Ça ne se voit pas au premier coup d'œil, mais c'est là dans chaque film : un rythme, une bande-son, un cadre qui prend son temps."
+      ],
+      "citation": "Ces inspirations sont devenues le fil conducteur de mes créations.",
+      "titre_en": "Nineties hip hop and auteur cinema",
+      "texte_en": [
+        "Two things shaped me more than the rest: nineties New York jazz hip hop, and auteur cinema.",
+        "You don't see it at first glance, but it is there in every film: a tempo, a soundtrack, a frame that takes its time."
+      ],
+      "citation_en": "Those influences became the thread running through everything I make."
+    },
+    {
+      "titre": "Ce que je cherche, et ce que je ne cherche pas",
+      "texte": [
+        "Je ne fais pas des films qui expliquent. Je fais des films qu'on regarde deux fois."
+      ],
+      "citation": "Je ne cherche pas à délivrer un message, mais plutôt à offrir un regard, une émotion, un instant suspendu.",
+      "titre_en": "What I am after, and what I am not",
+      "texte_en": [
+        "I don't make films that explain. I make films you watch twice."
+      ],
+      "citation_en": "I am not trying to deliver a message, but to offer a gaze, an emotion, a suspended moment."
+    }
+  ],
+  "formats": [
+    {
+      "nom": "Teaser",
+      "quoi": "Un film court pour annoncer un événement, une sortie, une saison.",
+      "pour": "Festivals, salles, marques qui lancent quelque chose.",
+      "nom_en": "Teaser",
+      "quoi_en": "A short film to announce an event, a release, a season.",
+      "pour_en": "Festivals, venues, brands launching something."
+    },
+    {
+      "nom": "Bande-annonce de festival",
+      "quoi": "Le film qui ouvre les séances et donne le ton de l'édition.",
+      "pour": "Le FIPADOC et le Ciné-Court Animé m'en ont confié.",
+      "nom_en": "Festival trailer",
+      "quoi_en": "The film that opens the screenings and sets the tone of the edition.",
+      "pour_en": "FIPADOC and Ciné-Court Animé have both commissioned one."
+    },
+    {
+      "nom": "Publicité",
+      "quoi": "Pour une marque, dans son univers ou dans le mien.",
+      "pour": "Devialet, Snapchat, Kiblind.",
+      "nom_en": "Commercial",
+      "quoi_en": "For a brand, in its world or in mine.",
+      "pour_en": "Devialet, Snapchat, Kiblind."
+    },
+    {
+      "nom": "Logo animé",
+      "quoi": "La signature qui bouge, au début ou à la fin d'un film.",
+      "pour": "Le format le plus court, et le plus vu.",
+      "nom_en": "Animated logo",
+      "quoi_en": "The signature that moves, at the start or the end of a film.",
+      "pour_en": "The shortest format, and the most seen."
+    }
+  ],
+  "comment": [
+    {
+      "n": "1",
+      "t": "Vous m'écrivez",
+      "d": "Le format, la date, l'ordre de budget. Trois lignes suffisent pour que je réponde vraiment.",
+      "t_en": "You write to me",
+      "d_en": "The format, the date, the budget range. Three lines are enough for a real answer."
+    },
+    {
+      "n": "2",
+      "t": "On cadre",
+      "d": "Un appel, une intention, une durée. Je dis oui ou je dis non, et je le dis vite.",
+      "t_en": "We frame it",
+      "d_en": "A call, an intention, a running time. I say yes or I say no, and I say it fast."
+    },
+    {
+      "n": "3",
+      "t": "Je montre tôt",
+      "d": "Un storyboard animé avant la couleur. C'est là qu'on corrige, pas à la fin.",
+      "t_en": "I show you early",
+      "d_en": "An animated storyboard before any colour. That is when we fix things, not at the end."
+    },
+    {
+      "n": "4",
+      "t": "Vous recevez le film",
+      "d": "Aux formats dont vous avez besoin, prêts à publier.",
+      "t_en": "You get the film",
+      "d_en": "In every format you need, ready to publish."
+    }
+  ],
+  "_comment_note": "LES QUATRE ÉTAPES SONT UNE PROPOSITION. À faire valider par Simon : c'est sa façon de travailler, pas la nôtre.",
+  "comment_titre": "Vous voyez le film avant qu'il soit fini.",
+  "comment_chapeau": "La peur, quand on commande une animation, c'est de découvrir le résultat trop tard. Je montre un storyboard animé avant de passer à la couleur : on corrige quand c'est encore facile.",
+  "promesse_en": "I animate warped worlds — faces that spill over, colours that shout, objects that start talking. For brands, festivals and institutions that would rather be noticed.",
+  "comment_titre_en": "You see the film before it is finished.",
+  "comment_chapeau_en": "The fear, when you commission animation, is finding out too late. I show an animated storyboard before moving to colour: we correct while it is still easy."
+}

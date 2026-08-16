@@ -1,0 +1,231 @@
+# =====================================================================
+# L'INTERFACE D'ÉDITION DE SIMON
+#
+# Ce fichier décrit les formulaires qu'il voit. Chaque champ pointe sur
+# une valeur réelle du site : ce qu'il tape ici sort à l'écran.
+#
+# CE QU'IL PEUT CHANGER : ses films, ses mondes, ses reels, ses clients,
+# son histoire, ses coordonnées.
+# CE QU'IL NE PEUT PAS : la charpente, la mise en page, les couleurs.
+# Ce n'est pas de la méfiance, c'est du service : un site qu'on peut
+# dérégler d'un clic n'est plus livrable.
+#
+# AVANT DE POUVOIR S'EN SERVIR — remplacer __SITE_DECAPBRIDGE__ ci-dessous
+# par l'identifiant donné par DecapBridge à la création du site, et
+# remplacer __DEPOT__ par matissesolitude-pixel/simon-vergely.
+# Tant que ces deux valeurs sont là, la page d'administration refuse de
+# se lancer et affiche la marche à suivre : elle ne casse pas en silence.
+# =====================================================================
+
+backend:
+  name: git-gateway
+  repo: __DEPOT__
+  branch: main
+  identity_url: https://auth.decapbridge.com/sites/__SITE_DECAPBRIDGE__
+  gateway_url: https://gateway.decapbridge.com
+
+# Les images déposées par Simon atterrissent avec celles du site.
+media_folder: site/assets/img
+public_folder: /assets/img
+
+# Il voit ses modifications avant de publier, sur une adresse temporaire.
+publish_mode: editorial_workflow
+
+locale: fr
+site_url: https://simonvergely.com
+logo_url: /assets/img/logo-ircam.png
+
+collections:
+  # -------------------------------------------------------------------
+  - name: coordonnees
+    label: Mes coordonnées
+    files:
+      - name: contact
+        label: Mail, téléphone, Instagram
+        file: donnees/contact.json
+        description: >
+          Ce que les clients utilisent pour vous joindre. Le mail et le
+          téléphone apparaissent en bas de chaque page et sur les boutons.
+        fields:
+          - { name: mail, label: Adresse mail, widget: string,
+              hint: "Celle qui reçoit les demandes de projet." }
+          - { name: tel, label: Téléphone (format international), widget: string,
+              pattern: ['^\+[0-9]{8,15}$',
+                        "Commencez par + et l'indicatif, sans espace. Exemple : +33769051349"],
+              hint: "Sert au bouton Appeler et au bouton SMS. Sans espace." }
+          - { name: tel_affiche, label: Téléphone tel qu'on le lit, widget: string,
+              hint: "La version lisible affichée à l'écran. Exemple : 07 69 05 13 49" }
+          - { name: instagram, label: Compte Instagram, widget: string,
+              hint: "Sans l'arobase. Exemple : simonvergely" }
+
+  # -------------------------------------------------------------------
+  - name: travaux
+    label: Mes travaux
+    files:
+      - name: travaux
+        label: Les films et les mondes déformés
+        file: donnees/travaux.json
+        description: >
+          Deux registres. Les films occupent la page « Le travail », les
+          mondes déformés la page d'accueil. Une image n'est jamais montrée
+          à deux endroits.
+        fields:
+          - name: films
+            label: Les films
+            widget: object
+            fields:
+              - { name: titre, label: Titre de la section, widget: string }
+              - { name: titre_en, label: Titre en anglais, widget: string }
+              - { name: chapeau, label: Texte d'introduction, widget: text }
+              - { name: chapeau_en, label: Texte d'introduction en anglais, widget: text }
+              - name: liste
+                label: Les films
+                label_singular: un film
+                widget: list
+                summary: "{{fields.vu}}"
+                fields:
+                  - { name: f, label: Image, widget: image,
+                      hint: "Format paysage. Elle sera recadrée en 16/9." }
+                  - { name: vu, label: Ce qu'on voit, widget: string,
+                      hint: "Décrivez l'image en quelques mots. C'est la légende." }
+                  - { name: vu_en, label: Ce qu'on voit, en anglais, widget: string }
+          - name: mondes
+            label: Les mondes déformés
+            widget: object
+            fields:
+              - { name: titre, label: Titre de la section, widget: string }
+              - { name: titre_en, label: Titre en anglais, widget: string }
+              - { name: chapeau, label: Texte d'introduction, widget: text }
+              - { name: chapeau_en, label: Texte d'introduction en anglais, widget: text }
+              - name: liste
+                label: Les mondes
+                label_singular: un monde
+                widget: list
+                summary: "{{fields.vu}}"
+                fields:
+                  - { name: f, label: Image, widget: image,
+                      hint: "Format portrait. Si ce visuel a un reel, il s'affichera en vidéo à la place." }
+                  - { name: vu, label: Ce qu'on voit, widget: string }
+                  - { name: vu_en, label: Ce qu'on voit, en anglais, widget: string }
+
+  # -------------------------------------------------------------------
+  - name: publications
+    label: Mes reels
+    files:
+      - name: reels
+        label: Les vidéos qui jouent sur l'accueil
+        file: donnees/publications.json
+        description: >
+          Les reels se jouent directement sur le site. Pour en ajouter un,
+          ouvrez la publication sur Instagram et copiez le code qui suit
+          /reel/ dans l'adresse.
+        fields:
+          - name: reels
+            label: Les reels
+            label_singular: un reel
+            widget: list
+            summary: "{{fields.vu}}  ·  {{fields.code}}"
+            fields:
+              - { name: code, label: Code du reel, widget: string,
+                  pattern: ['^[A-Za-z0-9_-]{6,20}$',
+                            "C'est la suite de lettres après /reel/ dans l'adresse Instagram."],
+                  hint: "Dans instagram.com/reel/DbIySQNChyT/ le code est DbIySQNChyT" }
+              - { name: vu, label: Ce qu'on voit, widget: string }
+              - { name: vu_en, label: Ce qu'on voit, en anglais, widget: string }
+              - { name: apercu, label: Image de secours, widget: image,
+                  hint: "S'affiche le temps que la vidéo charge." }
+
+  # -------------------------------------------------------------------
+  - name: clients
+    label: Mes clients
+    files:
+      - name: clients
+        label: Les logos qui défilent
+        file: donnees/clients.json
+        description: >
+          Ils défilent en bandeau sur toutes les pages. C'est la preuve la
+          plus regardée du site : mettez les plus connus en premier.
+        fields:
+          - name: logos
+            label: Les logos
+            label_singular: un logo
+            widget: list
+            summary: "{{fields.nom}}"
+            fields:
+              - { name: f, label: Logo, widget: image,
+                  hint: "Fond transparent de préférence. Il sera affiché en blanc sur noir." }
+              - { name: nom, label: Nom du client, widget: string }
+
+  # -------------------------------------------------------------------
+  - name: histoire
+    label: Mon histoire
+    files:
+      - name: histoire
+        label: Ce que je raconte de moi
+        file: donnees/histoire.json
+        description: >
+          La page « Travailler ensemble ». Écrivez comme vous parlez : les
+          phrases entre guillemets sont les vôtres, elles portent la page.
+        fields:
+          - { name: promesse, label: La promesse, widget: text }
+          - { name: promesse_en, label: La promesse, en anglais, widget: text }
+          - name: chapitres
+            label: Les chapitres
+            label_singular: un chapitre
+            widget: list
+            summary: "{{fields.titre}}"
+            fields:
+              - { name: titre, label: Titre, widget: string }
+              - { name: titre_en, label: Titre en anglais, widget: string }
+              - { name: texte, label: Paragraphes, widget: list, field: { name: p, label: Paragraphe, widget: text } }
+              - { name: texte_en, label: Paragraphes en anglais, widget: list, field: { name: p, label: Paragraphe, widget: text } }
+              - { name: citation, label: La phrase à retenir, widget: text }
+              - { name: citation_en, label: La phrase à retenir, en anglais, widget: text }
+          - name: formats
+            label: Ce que je propose
+            label_singular: un format
+            widget: list
+            summary: "{{fields.nom}}"
+            fields:
+              - { name: nom, label: Nom, widget: string }
+              - { name: nom_en, label: Nom en anglais, widget: string }
+              - { name: quoi, label: En quoi ça consiste, widget: text }
+              - { name: quoi_en, label: En quoi ça consiste, en anglais, widget: text }
+              - { name: pour, label: Pour qui, widget: string }
+              - { name: pour_en, label: Pour qui, en anglais, widget: string }
+          - { name: comment_titre, label: Titre de « comment ça se passe », widget: string }
+          - { name: comment_titre_en, label: Le même en anglais, widget: string }
+          - { name: comment_chapeau, label: Introduction, widget: text }
+          - { name: comment_chapeau_en, label: Introduction en anglais, widget: text }
+          - name: comment
+            label: Les étapes
+            label_singular: une étape
+            widget: list
+            summary: "{{fields.n}}. {{fields.t}}"
+            fields:
+              - { name: n, label: Numéro, widget: string }
+              - { name: t, label: Titre, widget: string }
+              - { name: t_en, label: Titre en anglais, widget: string }
+              - { name: d, label: Description, widget: text }
+              - { name: d_en, label: Description en anglais, widget: text }
+
+  # -------------------------------------------------------------------
+  - name: instagram
+    label: Nombre d'abonnés
+    files:
+      - name: instagram
+        label: Le compteur
+        file: donnees/instagram.json
+        description: >
+          Une fois le compte relié, ce chiffre se met à jour tout seul
+          quatre fois par jour et vous n'avez plus rien à faire ici.
+          En attendant, vous pouvez le corriger à la main.
+        fields:
+          - { name: compte, label: Compte Instagram, widget: string }
+          - { name: abonnes, label: Nombre d'abonnés, widget: number,
+              value_type: int, min: 0 }
+          - { name: releve, label: Date du relevé, widget: datetime,
+              date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD",
+              hint: "Le site affiche cette date à côté du chiffre. Un nombre sans date ne prouve rien." }
+          - { name: source, label: Origine, widget: select,
+              options: ["manuel", "api"], default: "manuel" }

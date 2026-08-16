@@ -1,0 +1,31 @@
+{
+  "_lisez_moi": [
+    "LE NOMBRE D'ABONNÉS, ET SA DATE.",
+    "",
+    "CE FICHIER EST ÉCRIT PAR LA MACHINE, PAS À LA MAIN.",
+    "Le script `abonnes.py` interroge l'API Instagram et réécrit « abonnes »",
+    "et « releve ». Une action GitHub le lance quatre fois par jour, relance",
+    "le générateur et publie. Si Simon passe à 50 000, le site le dit dans",
+    "les six heures — sans que personne y touche.",
+    "",
+    "TANT QUE LE JETON N'EXISTE PAS, la valeur ci-dessous est celle du",
+    "relevé manuel du 16/08/2026 et elle ne bouge pas. Le site fonctionne",
+    "quand même : c'est le seul endroit où le chiffre est écrit.",
+    "",
+    "CE QU'IL FAUT POUR L'AUTOMATISER — trois choses, toutes chez Simon :",
+    "  1. son compte Instagram en compte professionnel (Réglages > Type de",
+    "     compte). Gratuit, réversible, et il garde son profil tel quel.",
+    "  2. ce compte relié à une page Facebook, même vide.",
+    "  3. un jeton d'accès longue durée, à coller dans les secrets GitHub",
+    "     sous IG_TOKEN, et l'identifiant du compte sous IG_USER_ID.",
+    "",
+    "Sans le point 1, l'API refuse : Instagram ne publie le nombre",
+    "d'abonnés que pour les comptes professionnels, et seulement à leur",
+    "propriétaire. Aucun contournement ne tient dans la durée."
+  ],
+
+  "compte": "simonvergely",
+  "abonnes": 49700,
+  "releve": "2026-08-16",
+  "source": "manuel"
+}

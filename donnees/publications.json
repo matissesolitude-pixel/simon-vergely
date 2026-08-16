@@ -1,0 +1,60 @@
+{
+  "_lisez_moi": [
+    "LES REELS À INTÉGRER, choisis par le PO le 16/08/2026.",
+    "",
+    "COMMENT ÇA MARCHE",
+    "Instagram fournit une intégration : un cadre pointant sur",
+    "instagram.com/reel/CODE/embed. La vidéo se regarde SUR LE SITE,",
+    "sans aller-retour — c'est tout l'intérêt.",
+    "",
+    "DEUX CHOSES À SAVOIR",
+    "  1. L'intégration ne s'affiche PAS dans la maquette publiée en artifact :",
+    "     les artifacts bloquent tout appel vers un site extérieur. Sur le site",
+    "     réellement déployé, elle marche. Dans la maquette, on retombe sur",
+    "     une image et un lien.",
+    "  2. Instagram charge ses propres scripts dans le cadre. C'est la seule",
+    "     dépendance externe du site, et elle est assumée : c'est le prix de",
+    "     la vidéo qui joue sur place.",
+    "",
+    "Pour en ajouter : coller le code du reel, celui qui suit /reel/ dans l'URL.",
+    "",
+    "« vu » est la legende francaise, « vu_en » l'anglaise."
+  ],
+  "reels": [
+    {
+      "code": "DbIySQNChyT",
+      "apercu": "oeuvre-lunettes.jpg",
+      "vu": "Le cri, derrière les lunettes",
+      "vu_en": "The scream, behind the glasses"
+    },
+    {
+      "code": "DZXoaV7tVba",
+      "apercu": "oeuvre-torse-dents.jpg",
+      "vu": "Life Loser",
+      "vu_en": "Life Loser"
+    },
+    {
+      "code": "DWz7_f3itHn",
+      "apercu": "oeuvre-ramen.jpg",
+      "vu": "Ramen au ventilateur",
+      "vu_en": "Ramen and the fan"
+    },
+    {
+      "code": "DYCfVz4tfnY",
+      "apercu": "oeuvre-grille-pain.jpg",
+      "vu": "Le grille-pain qui marche",
+      "vu_en": "The toaster that walks"
+    },
+    {
+      "code": "DYvJqTfNNmy",
+      "apercu": "oeuvre-bar-vert.jpg",
+      "vu": "Le bar, en vert",
+      "vu_en": "The bar, in green"
+    }
+  ],
+  "_apercu_note": [
+    "« apercu » est l'image de repli, utilisée dans la maquette et tant que",
+    "l'intégration n'a pas chargé. Elle ne correspond PAS forcément au reel :",
+    "à faire caler par Simon, ou à remplacer par sa vraie vignette."
+  ]
+}

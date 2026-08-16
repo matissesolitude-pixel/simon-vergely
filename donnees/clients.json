@@ -1,0 +1,56 @@
+{
+  "_lisez_moi": [
+    "LES CLIENTS, TELS QUE SIMON LES AFFICHE LUI-MÊME.",
+    "Les dix logos viennent de la page « À propos » de son portfolio Adobe,",
+    "découpés de sa propre planche le 16/08/2026 — pas ramassés au hasard.",
+    "",
+    "MAQUETTE PRIVÉE. Avant toute mise en ligne, lui faire confirmer qu'il a",
+    "le droit d'afficher chacun de ces logos : une mention client est en",
+    "général admise, certains contrats l'encadrent.",
+    "",
+    "L'ordre est choisi : on ouvre sur les deux plus impressionnants."
+  ],
+  "source": "contact2064.myportfolio.com/about-me, relevé le 16/08/2026",
+  "logos": [
+    {
+      "f": "logo-ircam.png",
+      "nom": "Ircam — Centre Pompidou"
+    },
+    {
+      "f": "logo-devialet.png",
+      "nom": "Devialet"
+    },
+    {
+      "f": "logo-snapchat.png",
+      "nom": "Snapchat"
+    },
+    {
+      "f": "logo-kiblind.png",
+      "nom": "Kiblind"
+    },
+    {
+      "f": "logo-fipadoc.png",
+      "nom": "FIPADOC — Festival international documentaire"
+    },
+    {
+      "f": "logo-cine-court.png",
+      "nom": "Ciné-Court Animé, Roanne"
+    },
+    {
+      "f": "logo-roanne.png",
+      "nom": "Ville de Roanne"
+    },
+    {
+      "f": "logo-bbd.png",
+      "nom": "Boulazac Basket Dordogne"
+    },
+    {
+      "f": "logo-ricamarie.png",
+      "nom": "Centre Culturel de la Ricamarie"
+    },
+    {
+      "f": "logo-squawk.png",
+      "nom": "Squawk"
+    }
+  ]
+}

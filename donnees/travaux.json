@@ -1,0 +1,62 @@
+{
+  "_lisez_moi": [
+    "DEUX REGISTRES, ET C'EST LE CŒUR DU SITE.",
+    "",
+    "  · LES FILMS — ses films de commande, relevés sur son portfolio le",
+    "    16/08/2026. Registre posé, narratif, pour marques et institutions.",
+    "  · LES MONDES — ce qu'il publie sur Instagram. Grotesque, saturé,",
+    "    déformé. C'est ce registre qui fait les 49 700 abonnés.",
+    "",
+    "UN CORPS DE TRAVAIL, UNE SEULE SECTION, UN SEUL ENDROIT.",
+    "Les mondes ne se coupent pas en deux : les cinq qui ont une vidéo et les",
+    "trois qui n'en ont pas se montrent dans la même section, sur l'accueil.",
+    "Les films occupent la page Travail. Aucune image n'apparaît deux fois.",
+    "",
+    "Les intitulés décrivent CE QU'ON VOIT. Aucun titre de film, aucun nom de",
+    "client n'est attribué à une image : on ne sait pas laquelle va avec qui.",
+    "C'est la première chose à lui faire remplir.",
+    "",
+    "« vu » est la légende française, « vu_en » l'anglaise. Les deux se",
+    "remplissent dans le même formulaire côté interface d'édition."
+  ],
+
+  "films": {
+    "titre": "Les films",
+    "titre_en": "The films",
+    "chapeau": "Teasers, bandes-annonces de festivals, publicités, logos animés. Le registre qu'il montre à ses clients depuis des années.",
+    "chapeau_en": "Teasers, festival trailers, commercials, animated logos. The register he has been showing clients for years.",
+    "liste": [
+      { "f": "film-plongeurs.jpg",     "vu": "Plongeurs rouges dans la ville bleue", "vu_en": "Red divers in the blue city" },
+      { "f": "film-bouches.jpg",       "vu": "Les bouches",                          "vu_en": "Mouths" },
+      { "f": "film-ponton.jpg",        "vu": "Le ponton au soleil rouge",            "vu_en": "The jetty under a red sun" },
+      { "f": "film-parapluies.jpg",    "vu": "Parapluies, en noir et blanc",         "vu_en": "Umbrellas, in black and white" },
+      { "f": "film-foret.jpg",         "vu": "L'oiseau et les fleurs",               "vu_en": "The bird and the flowers" },
+      { "f": "film-robot-rouquin.jpg", "vu": "Le robot et le rouquin",               "vu_en": "The robot and the redhead" },
+      { "f": "film-enceinte.jpg",      "vu": "L'enceinte dans les nuages",           "vu_en": "The speaker in the clouds" },
+      { "f": "film-supreme.jpg",       "vu": "La façade, au crépuscule",             "vu_en": "The façade, at dusk" }
+    ]
+  },
+
+  "mondes": {
+    "titre": "Les mondes déformés",
+    "titre_en": "The warped worlds",
+    "chapeau": "Ce qu'il publie pour lui. Des visages qui débordent, des objets qui prennent la parole. C'est ce registre-là qui a fait 49 700 abonnés.",
+    "chapeau_en": "What he posts for himself. Faces that spill over, objects that start talking. This is the register that built 49,700 followers.",
+    "liste": [
+      { "f": "oeuvre-lunettes.jpg",    "vu": "Le cri, derrière les lunettes", "vu_en": "The scream, behind the glasses" },
+      { "f": "oeuvre-torse-dents.jpg", "vu": "Life Loser",                    "vu_en": "Life Loser" },
+      { "f": "oeuvre-ramen.jpg",       "vu": "Ramen au ventilateur",          "vu_en": "Ramen and the fan" },
+      { "f": "oeuvre-grille-pain.jpg", "vu": "Le grille-pain qui marche",     "vu_en": "The toaster that walks" },
+      { "f": "oeuvre-bar-vert.jpg",    "vu": "Le bar, en vert",               "vu_en": "The bar, in green" },
+      { "f": "oeuvre-mouche.jpg",      "vu": "La mouche et les spaghettis",   "vu_en": "The fly and the spaghetti" },
+      { "f": "oeuvre-selfie-vert.jpg", "vu": "Autoportrait au téléphone",     "vu_en": "Self-portrait with phone" },
+      { "f": "oeuvre-radio.jpg",       "vu": "La radio",                      "vu_en": "The radio" }
+    ]
+  },
+
+  "_photos_note": [
+    "Les visuels sont des captures : films recadrés depuis son portfolio,",
+    "mondes recadrés depuis sa grille Instagram. Nets en petit et moyen format.",
+    "LES FICHIERS SOURCES SONT CHEZ LUI — à demander avant toute mise en ligne."
+  ]
+}

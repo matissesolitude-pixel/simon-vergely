@@ -1,0 +1,18 @@
+{
+  "_lisez_moi": [
+    "LES COORDONNÉES, À UN SEUL ENDROIT.",
+    "",
+    "Elles étaient écrites en dur dans le générateur : changer une adresse",
+    "mail demandait de toucher au code. Elles sont ici pour que Simon les",
+    "change lui-même depuis l'interface d'édition.",
+    "",
+    "« tel » s'écrit au format international (+33…) : c'est ce qui permet au",
+    "bouton d'appel et au bouton SMS de marcher depuis n'importe quel pays.",
+    "« tel_affiche » est la version lisible, celle qu'on montre à l'écran."
+  ],
+
+  "mail": "sicfilmstudio@gmail.com",
+  "tel": "+33769051349",
+  "tel_affiche": "07 69 05 13 49",
+  "instagram": "simonvergely"
+}

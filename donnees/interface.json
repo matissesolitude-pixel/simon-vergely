@@ -1,0 +1,261 @@
+{
+  "_lisez_moi": [
+    "LE TEXTE D'HABILLAGE DU SITE, DANS LES DEUX LANGUES.",
+    "",
+    "Tout ce qui n'est pas une donnée de Simon (ses films, ses clients, son",
+    "histoire) est ici : la navigation, les titres de section, les boutons, le",
+    "pied de page. Chaque clé porte « fr » et « en ».",
+    "",
+    "L'ANGLAIS N'EST PAS UNE TRADUCTION MOT À MOT. La formule anglaise est",
+    "celle de Simon lui-même quand elle existe : « too perfect is suspicious »",
+    "vient de sa propre présentation Instagram, pas de nous.",
+    "",
+    "CE FICHIER N'IRA PAS DANS L'INTERFACE D'ÉDITION. C'est la charpente du",
+    "site : si le client la modifie, la mise en page casse. Ce que le client",
+    "modifie, ce sont ses travaux, ses reels, son histoire, ses coordonnées."
+  ],
+  "langue_autre": {
+    "fr": "EN",
+    "en": "FR"
+  },
+  "langue_titre": {
+    "fr": "Read this site in English",
+    "en": "Lire ce site en français"
+  },
+  "nav_accueil": {
+    "fr": "Accueil",
+    "en": "Home"
+  },
+  "nav_travail": {
+    "fr": "Le travail",
+    "en": "The work"
+  },
+  "nav_ensemble": {
+    "fr": "Travailler ensemble",
+    "en": "Work with me"
+  },
+  "tete_projet": {
+    "fr": "Un projet",
+    "en": "A project"
+  },
+  "badge_titre": {
+    "fr": "Abonnés Instagram",
+    "en": "Instagram followers"
+  },
+  "bandeau_titre": {
+    "fr": "Ils lui ont confié un film",
+    "en": "They trusted him with a film"
+  },
+  "meta_titre_acc": {
+    "fr": "Simon Vergély — animateur 2D et motion designer",
+    "en": "Simon Vergély — 2D animator and motion designer"
+  },
+  "meta_titre_tra": {
+    "fr": "Le travail",
+    "en": "The work"
+  },
+  "meta_titre_ens": {
+    "fr": "Travailler ensemble",
+    "en": "Work with me"
+  },
+  "meta_desc": {
+    "fr": "Mondes déformés, couleurs qui crient. Teasers, bandes-annonces, publicités et logos animés. Ircam, Devialet, Snapchat.",
+    "en": "Warped worlds, colours that shout. Teasers, festival trailers, commercials and animated logos. Ircam, Devialet, Snapchat."
+  },
+  "acc_eti": {
+    "fr": "Animateur 2D · motion designer",
+    "en": "2D animator · motion designer"
+  },
+  "acc_h1_1": {
+    "fr": "Trop propre,",
+    "en": "Too perfect"
+  },
+  "acc_h1_2": {
+    "fr": "c'est suspect.",
+    "en": "is suspicious."
+  },
+  "acc_b1": {
+    "fr": "Voir le travail",
+    "en": "See the work"
+  },
+  "acc_b2": {
+    "fr": "Me parler d'un projet",
+    "en": "Tell me about a project"
+  },
+  "chiffre_1": {
+    "fr": "abonnés sur Instagram, au",
+    "en": "Instagram followers, as of"
+  },
+  "chiffre_2": {
+    "fr": "clients, de l'Ircam à Snapchat",
+    "en": "clients, from Ircam to Snapchat"
+  },
+  "chiffre_3": {
+    "fr": "formats : teaser, bande-annonce, publicité, logo animé",
+    "en": "formats: teaser, festival trailer, commercial, animated logo"
+  },
+  "acc_reels_eti": {
+    "fr": "Ce qui tourne en ce moment",
+    "en": "Playing right now"
+  },
+  "acc_reels_h2_1": {
+    "fr": "Ça bouge,",
+    "en": "It moves."
+  },
+  "acc_reels_h2_2": {
+    "fr": "alors regardez.",
+    "en": "So watch it."
+  },
+  "acc_reels_chap": {
+    "fr": "Cinq films, joués ici même. Pas besoin d'aller ailleurs.",
+    "en": "Five films, playing right here. No need to go anywhere."
+  },
+  "reel_repli": {
+    "fr": "La vidéo se joue sur le site en ligne",
+    "en": "The video plays on the live site"
+  },
+  "acc_films_eti": {
+    "fr": "Et pour les marques",
+    "en": "And for brands"
+  },
+  "acc_films_h2": {
+    "fr": "L'autre registre.",
+    "en": "The other register."
+  },
+  "acc_films_note": {
+    "fr": "Huit films, sur la page suivante. Aucun n'est montré ici : cliquer doit servir à quelque chose.",
+    "en": "Eight films, on the next page. Not one of them is shown here: clicking should be worth something."
+  },
+  "acc_films_b": {
+    "fr": "Voir les huit films",
+    "en": "See all eight films"
+  },
+  "tra_eti": {
+    "fr": "Le travail",
+    "en": "The work"
+  },
+  "tra_h1_1": {
+    "fr": "Deux registres,",
+    "en": "Two registers,"
+  },
+  "tra_h1_2": {
+    "fr": "une seule main.",
+    "en": "one hand."
+  },
+  "tra_chapeau": {
+    "fr": "D'un côté les films de commande, posés, narratifs. De l'autre les mondes déformés, ceux que je fais pour moi. Les seconds nourrissent les premiers — c'est là que j'essaie ce que je n'ose pas encore vendre.",
+    "en": "On one side the commissioned films: measured, narrative. On the other the warped worlds, the ones I make for myself. The second feed the first — that is where I try what I don't yet dare sell."
+  },
+  "tra_mondes_note_1": {
+    "fr": "Les cinq autres se regardent en vidéo,",
+    "en": "The other five play as video,"
+  },
+  "tra_mondes_note_2": {
+    "fr": "sur la page d'accueil",
+    "en": "on the home page"
+  },
+  "tra_b1": {
+    "fr": "Me parler d'un projet",
+    "en": "Tell me about a project"
+  },
+  "tra_b2": {
+    "fr": "Tout voir sur Instagram",
+    "en": "See everything on Instagram"
+  },
+  "ens_eti": {
+    "fr": "Travailler ensemble",
+    "en": "Work with me"
+  },
+  "ens_h1_1": {
+    "fr": "Dites-moi ce que",
+    "en": "Tell me what"
+  },
+  "ens_h1_2": {
+    "fr": "vous voulez animer.",
+    "en": "you want animated."
+  },
+  "ens_chapeau": {
+    "fr": "Trois choses suffisent pour que je réponde vraiment : le format, la date de livraison et l'ordre de budget. Le reste se discute.",
+    "en": "Three things are enough for me to give you a real answer: the format, the delivery date and the budget range. The rest we discuss."
+  },
+  "ens_b_mail": {
+    "fr": "Écrire un mail",
+    "en": "Send an email"
+  },
+  "ens_b_sms": {
+    "fr": "Envoyer un SMS",
+    "en": "Send a text"
+  },
+  "ens_b_tel": {
+    "fr": "Appeler",
+    "en": "Call"
+  },
+  "ens_comment_eti": {
+    "fr": "Comment ça se passe",
+    "en": "How it goes"
+  },
+  "ens_qui_eti": {
+    "fr": "Qui je suis",
+    "en": "Who I am"
+  },
+  "ens_qui_h2_1": {
+    "fr": "J'ai appris seul.",
+    "en": "I taught myself."
+  },
+  "ens_qui_h2_2": {
+    "fr": "Ça se voit, et c'est voulu.",
+    "en": "It shows, and that's the point."
+  },
+  "ens_fin_h2": {
+    "fr": "On en parle ?",
+    "en": "Shall we talk?"
+  },
+  "mail_sujet": {
+    "fr": "Projet d'animation",
+    "en": "Animation project"
+  },
+  "mail_corps": {
+    "fr": "Format : \nPour quand : \nOrdre de budget : \n\nLe projet en deux lignes : ",
+    "en": "Format: \nDeadline: \nBudget range: \n\nThe project in two lines: "
+  },
+  "sms_corps": {
+    "fr": "Bonjour Simon, j'ai un projet d'animation : ",
+    "en": "Hi Simon, I have an animation project: "
+  },
+  "pied_1_h": {
+    "fr": "Simon Vergély",
+    "en": "Simon Vergély"
+  },
+  "pied_1_p_1": {
+    "fr": "Animateur 2D et motion designer.",
+    "en": "2D animator and motion designer."
+  },
+  "pied_1_p_2": {
+    "fr": "Teasers, bandes-annonces, publicités, logos animés.",
+    "en": "Teasers, festival trailers, commercials, animated logos."
+  },
+  "pied_2_h": {
+    "fr": "Écrire",
+    "en": "Write"
+  },
+  "pied_3_h": {
+    "fr": "Suivre",
+    "en": "Follow"
+  },
+  "pied_abonnes": {
+    "fr": "abonnés",
+    "en": "followers"
+  },
+  "pied_bas": {
+    "fr": "Maquette. Les logos clients, les visuels de films et les publications sont ceux de Simon Vergély, repris de son portfolio et de son compte Instagram le 16 août 2026. Le showreel reste à intégrer.",
+    "en": "Mock-up. The client logos, film stills and posts are Simon Vergély's own, taken from his portfolio and his Instagram account on 16 August 2026. The showreel is still to be added."
+  },
+  "pouce_1": {
+    "fr": "Le travail",
+    "en": "The work"
+  },
+  "pouce_2": {
+    "fr": "Un projet",
+    "en": "A project"
+  }
+}

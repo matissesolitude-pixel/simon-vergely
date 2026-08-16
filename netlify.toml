@@ -1,0 +1,29 @@
+# NETLIFY CONSTRUIT LE SITE LUI-MÊME.
+#
+# Avant : on déposait le dossier site/ à la main. Chaque modification de
+# Simon aurait demandé qu'on le refasse — donc l'interface d'édition
+# n'aurait rien changé pour lui.
+# Maintenant : Simon publie depuis l'interface, ça écrit dans le dépôt,
+# Netlify relance le générateur et met le site en ligne. Personne au milieu.
+
+[build]
+  command = "python3 construire.py"
+  publish = "site"
+
+[build.environment]
+  PYTHON_VERSION = "3.11"
+
+# L'interface d'édition ne doit jamais remonter dans Google.
+[[headers]]
+  for = "/admin/*"
+  [headers.values]
+    X-Robots-Tag = "noindex"
+
+# Les deux langues : on envoie le visiteur vers la sienne à la première
+# visite, sans jamais le bloquer — le bouton FR/EN reste maître ensuite.
+[[redirects]]
+  from = "/"
+  to = "/en/index.html"
+  status = 302
+  conditions = { Language = ["en"] }
+  force = false

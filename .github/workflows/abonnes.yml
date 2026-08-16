@@ -1,0 +1,56 @@
+# LE COMPTEUR D'ABONNÉS SE MET À JOUR TOUT SEUL.
+#
+# Quatre fois par jour : on demande le nombre à Instagram, on reconstruit le
+# site, on publie. Si Simon passe à 50 000, le site le dit dans les six heures.
+#
+# TANT QUE LES SECRETS IG_TOKEN ET IG_USER_ID N'EXISTENT PAS, l'action tourne
+# sans rien casser : abonnes.py sort en silence, le chiffre reste celui du
+# dernier relevé manuel, et rien n'est publié.
+#
+# COÛT : environ une minute par passage, soit ~120 min/mois sur les 2 000
+# gratuites d'un dépôt privé.
+
+name: Abonnés Instagram
+
+on:
+  schedule:
+    - cron: "17 4,10,16,22 * * *"   # UTC — 06h17, 12h17, 18h17, 00h17 à Paris
+  workflow_dispatch:                # et à la demande, depuis l'onglet Actions
+
+permissions:
+  contents: write
+
+concurrency:
+  group: abonnes
+  cancel-in-progress: false
+
+jobs:
+  relever:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Relever le nombre d'abonnés
+        env:
+          IG_TOKEN: ${{ secrets.IG_TOKEN }}
+          IG_USER_ID: ${{ secrets.IG_USER_ID }}
+        run: python3 abonnes.py
+
+      - name: Reconstruire le site
+        run: python3 construire.py
+
+      - name: Publier si le chiffre a bougé
+        run: |
+          if [ -z "$(git status --porcelain)" ]; then
+            echo "  rien n'a changé — pas de publication"
+            exit 0
+          fi
+          git config user.name  "abonnes-bot"
+          git config user.email "abonnes-bot@users.noreply.github.com"
+          git add -A
+          git commit -m "abonnés : relevé automatique du $(date -u +%F)"
+          git push

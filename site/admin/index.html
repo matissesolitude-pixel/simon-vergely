@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Modifier le site — Simon Vergély</title>
+  <style>
+    body{margin:0;background:#F2F0EB;color:#141310;
+      font:400 17px/1.6 -apple-system,Helvetica,sans-serif}
+    .att{max-width:36rem;margin:14vh auto;padding:0 1.4rem}
+    .att h1{font-size:1.5rem;line-height:1.15;margin:0 0 1rem}
+    .att code{background:#E7E4DC;padding:.12em .4em;font-size:.92em}
+    .att li{margin-bottom:.7rem}
+    .att .eti{font-size:.72rem;font-weight:700;letter-spacing:.2em;
+      text-transform:uppercase;color:#E8481F;margin-bottom:.8rem}
+  </style>
+</head>
+<body>
+  <!-- L'INTERFACE D'ÉDITION.
+       Simon arrive ici, se connecte avec son adresse mail, et modifie son
+       site dans des champs. Il ne voit jamais GitHub, jamais un fichier,
+       jamais une ligne de code.
+
+       C'est la SEULE page du site qui charge un script extérieur : Decap ne
+       s'installe pas autrement. Elle n'est pas indexée et n'est liée depuis
+       aucune page — on y vient en tapant l'adresse. -->
+
+  <div id="attente" hidden class="att">
+    <p class="eti">Pas encore branché</p>
+    <h1>L'interface est prête, il manque le compte qui ouvre la porte.</h1>
+    <p>Trois choses, dans cet ordre, et Simon peut se connecter&nbsp;:</p>
+    <ol>
+      <li>Créer le site sur <a href="https://decapbridge.com">decapbridge.com</a>
+        et récupérer son identifiant.</li>
+      <li>Dans <code>site/admin/config.yml</code>, remplacer
+        <code>__SITE_DECAPBRIDGE__</code> par cet identifiant et
+        <code>__DEPOT__</code> par le nom du dépôt GitHub.</li>
+      <li>Inviter Simon par mail depuis DecapBridge.</li>
+    </ol>
+    <p>Tant que ce n'est pas fait, cette page s'arrête ici plutôt que
+      d'afficher une fenêtre de connexion qui ne mènerait nulle part.</p>
+  </div>
+
+  <script>
+    /* ON NE LANCE PAS L'INTERFACE SUR UNE CONFIGURATION INCOMPLÈTE.
+       Decap, face à un identifiant resté en gabarit, affiche un écran de
+       connexion qui échoue sans rien expliquer. On vérifie avant, et on
+       explique. Un outil qui refuse de démarrer en disant pourquoi vaut
+       mieux qu'un outil qui démarre et ne marche pas. */
+    fetch('config.yml')
+      .then(function (r) { return r.ok ? r.text() : ''; })
+      .then(function (y) {
+        if (y.indexOf('__SITE_DECAPBRIDGE__') !== -1 || y.indexOf('__DEPOT__') !== -1) {
+          document.getElementById('attente').hidden = false;
+          return;
+        }
+        var s = document.createElement('script');
+        s.src = 'https://unpkg.com/decap-cms@^3.8.0/dist/decap-cms.js';
+        document.body.appendChild(s);
+      });
+  </script>
+</body>
+</html>
